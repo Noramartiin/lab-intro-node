@@ -51,9 +51,27 @@ class SortedList {
     return smallest;
   }
 
-  sum() {}
+  sum() {
+    let sum = 0;
+    if (!this.items) {
+      return null;
+    }
+    for (let i = 0; i < this.items.length; i++) {
+      sum += this.items[i];
+    }
+    return sum;
+  }
 
-  avg() {}
+  avg() {
+    let sum = 0;
+    if (this.items <= 0) {
+      throw new Error("EmptySortedList");
+    }
+    for (let i = 0; i < this.items.length; i++) {
+      sum += this.items[i];
+    }
+    return sum / this.items.length;
+  }
 }
 
 module.exports = SortedList;
